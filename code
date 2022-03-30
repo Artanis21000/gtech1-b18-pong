@@ -1,0 +1,25 @@
+var chronoTexte;
+var monTimer;
+var chrono = 900;
+
+monTimer = this.time.addEvent({
+    delay: 1000,
+    callback: compteUneSeconde,
+    callbackScope: this,
+    loop: true
+});
+
+function compteUneSeconde() {
+    chrono = chrono - 1; // on enleve une uniter du chronometre
+}
+
+chronoTexte = this.add.text(16, 100, " time remaining: 900 seconde ", {
+    fontSize: "24px",
+    fill: "#FFFFFF" //Couleur de l'écriture
+});
+chronoTexte.setScrollFactor(0);
+
+function compteUneSeconde() {
+    chrono = chrono - 1; // on enleve une uniter du chronometre
+    chronoTexte.setText(" Chrono: " + chrono); // mise à jour de l'affichage
+} 
